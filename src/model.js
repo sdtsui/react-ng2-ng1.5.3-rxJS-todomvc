@@ -14,9 +14,19 @@ var state = {
   todos: [defaultTodo],
 };
 
-function _createNewTodo(text, completed = false) {
+
+/**
+ * Helper method to create new todos. 
+ * When invoked without an id, creates a new Todo.
+ * When invoked with an id, edits to completes the Todo with that Id.
+ * @param  {[type]}  text      []
+ * @param  {Boolean} completed []
+ * @param  {[type]}  id        [for completing/editing TODOs]
+ * @return {[Obj]}            [new todo]
+ */
+function _createNewTodo(text, completed = false, id = undefined) {
   let newTodo = Object.assign({}, {
-    id: state.todos.length,
+    id: id ? id : state.todos.length,
     text: text,
     completed: completed,
   });
@@ -39,6 +49,7 @@ function add(text) {
 }
 
 function del(id) {
+  console.log("del called with id: ", id);
   let todos = state.todos.slice();
   todos = todos.filter(todo => todo.id !== id);
 
@@ -56,7 +67,7 @@ function edit(id, text) {
     if (todo.id === id) {
       let editedTodo = Object.assign(
         {},
-        _createNewTodo(text)
+        _createNewTodo(text, todo.completed, todo.id)
       );
       return editedTodo;
     } else {
@@ -80,7 +91,7 @@ function complete(id) {
     if (todo.id === id) {
       let completedTodo = Object.assign(
         {},
-        _createNewTodo(todo.text, !todo.completed),
+        _createNewTodo(todo.text, !todo.completed, id),
       );
       return completedTodo;
     } else {
@@ -88,7 +99,9 @@ function complete(id) {
     }
   };
   let todos = state.todos.slice();
+  console.log('todos :', todos);
   todos = todos.map(completeOneTodo);
+  console.log('todos after Map:', todos);
 
   state = Object.assign(
     {},
@@ -99,18 +112,36 @@ function complete(id) {
   subject.onNext(state);
 }
 
+function _toggleAllTodos(todo) {
+  let completedTodo = Object.assign(
+    {},
+    _createNewTodo(todo.text, !todo.completed, todo.id),
+  );
+
+  return completedTodo;
+}
+
+
 function completeAll() {
   let completeAllTodos = (todo) => {
     let completedTodo = Object.assign(
       {},
-      _createNewTodo(todo.text, true),
+      _createNewTodo(todo.text, true, todo.id),
     );
 
     return completedTodo;
   }
 
   let todos = state.todos.slice();
-  todos = todos.map(completeAllTodos);
+  if (
+    todos.every((todo) => {return todo.completed === true})
+    ||
+    todos.every((todo) => {return todo.completed === false})
+  ) {
+    todos = todos.map(_toggleAllTodos);
+  } else {
+    todos = todos.map(completeAllTodos);
+  }
 
   state = Object.assign(
     {},
@@ -138,6 +169,8 @@ function clearCompleted() {
 }
 
 Intent.subject.subscribe(function (payload) {
+  console.log("EVENT:", payload);
+  console.log("EVENT:", payload.key);
   switch(payload.key) {
     case Keys.TODO_ADD:
       add(payload.text);

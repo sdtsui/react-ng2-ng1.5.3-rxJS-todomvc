@@ -66,12 +66,4 @@ TodoItem.propTypes = {
   Intent: PropTypes.object.isRequired
 }
 
-// TodoItem.propTypes = {
-//   todo: PropTypes.object.isRequired,
-//   editTodo: PropTypes.func.isRequired,
-//   delt: PropTypes.func.isRequired,
-//   complete: PropTypes.func.isRequired
-// }
-
-
 export default TodoItem

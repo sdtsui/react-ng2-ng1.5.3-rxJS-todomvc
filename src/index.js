@@ -10,7 +10,6 @@ var Observable = Model.subject.map(function (appState) {
   return appState;
 });
 
-
 //react entrypoint
 Observable.subscribe((appState) => {
   //TODO: clean up

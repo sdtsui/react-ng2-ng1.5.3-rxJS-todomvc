@@ -3,14 +3,10 @@
 A set of examples in React, Angular2 and Angular 1.5, using RxJS.
 
 ### Notes to Self: 
-  Next Steps:
-  --convert all actions to intent
   - import CSS
 
 todo: 
   1. Working React Implmentation
-  2. Unit Tests for data layer?
-  3. Linter: Complete React TODO.
   4. Split into Angular2, Angular 1.5 Folders
 
 # Getting started

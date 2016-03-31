@@ -49,10 +49,4 @@ module.exports = {
       key: Keys.TODOS_CLEAR_COMPLETED,
     });
   },
-  // *** Note : Not actually a part of state. commenting out.
-  // changeFilter: function () {
-  //   intentSubject.onNext({
-  //     key: Keys.CHANGE_FILTER,
-  //   });
-  // }
 };
