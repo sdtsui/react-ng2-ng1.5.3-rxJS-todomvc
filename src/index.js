@@ -1,7 +1,8 @@
 var Rx = require('rx');
 var Model = require('./model');
 var React = require('react');
-var TodoApp = require('./views/TodoApp');
+var ReactDOM = require('react-dom');
+var TodoApp = require('./react/TodoApp');
 import Intent from './intent';
 
 // **since we're not filtering, we should just be able to use Model.subject, as it inherits Observable
@@ -15,7 +16,7 @@ Observable.subscribe((appState) => {
   //TODO: clean up
   appState.Intent = Intent;
 
-  React.render(
+  ReactDOM.render(
     <TodoApp {...appState}/>,
     document.getElementById('app')
   );
