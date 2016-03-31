@@ -16,15 +16,16 @@ class TodoItem extends Component {
 
   handleSave(id, text) {
     if (text.length === 0) {
-      this.props.deleteTodo(id)
+      this.props.Intent.del(id)
     } else {
-      this.props.editTodo(id, text)
+      this.props.Intent.edit(id, text)
     }
     this.setState({ editing: false })
   }
 
   render() {
-    const { todo, completeTodo, deleteTodo } = this.props
+    const { todo } = this.props
+    const { complete, del } = this.props.Intent
 
     let element
     if (this.state.editing) {
@@ -39,12 +40,12 @@ class TodoItem extends Component {
           <input className="toggle"
                  type="checkbox"
                  checked={todo.completed}
-                 onChange={() => completeTodo(todo.id)} />
+                 onChange={() => {complete(todo.id);}} />
           <label onDoubleClick={this.handleDoubleClick.bind(this)}>
             {todo.text}
           </label>
           <button className="destroy"
-                  onClick={() => deleteTodo(todo.id)} />
+                  onClick={() => del(todo.id)} />
         </div>
       )
     }
@@ -62,9 +63,15 @@ class TodoItem extends Component {
 
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
-  editTodo: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired,
-  completeTodo: PropTypes.func.isRequired
+  Intent: PropTypes.object.isRequired
 }
+
+// TodoItem.propTypes = {
+//   todo: PropTypes.object.isRequired,
+//   editTodo: PropTypes.func.isRequired,
+//   delt: PropTypes.func.isRequired,
+//   complete: PropTypes.func.isRequired
+// }
+
 
 export default TodoItem

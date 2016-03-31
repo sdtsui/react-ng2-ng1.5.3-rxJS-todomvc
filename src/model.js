@@ -80,7 +80,7 @@ function complete(id) {
     if (todo.id === id) {
       let completedTodo = Object.assign(
         {},
-        _createNewTodo(todo.text, true),
+        _createNewTodo(todo.text, !todo.completed),
       );
       return completedTodo;
     } else {
@@ -154,7 +154,7 @@ Intent.subject.subscribe(function (payload) {
     case Keys.TODO_COMPLETE:
       complete(payload.id);
       break;
-    case Keys.TODO_COMPLETE_ALL:
+    case Keys.TODOS_COMPLETE_ALL:
       completeAll();
       break;
     case Keys.TODOS_CLEAR_COMPLETED:

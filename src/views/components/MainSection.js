@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import TodoItem from './TodoItem'
 import Footer from './Footer'
+import Intent from './../../intent.js'
 
 const SHOW_ALL = 'show_all';
 const SHOW_COMPLETED = 'show_completed';

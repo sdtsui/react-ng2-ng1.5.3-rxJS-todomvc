@@ -16,7 +16,7 @@ module.exports = {
     });
   },
 
-  delete: function (id) {
+  del: function (id) {
     intentSubject.onNext({
       key: Keys.TODO_DELETE,
       id: id,
@@ -31,9 +31,10 @@ module.exports = {
     });
   },
 
-  complete: function () {
+  complete: function (id) {
     intentSubject.onNext({
       key: Keys.TODO_COMPLETE,
+      id: id,
     });
   },
 

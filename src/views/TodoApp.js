@@ -6,9 +6,7 @@ import Intent from '../intent'
 class TodoApp extends Component {
   render() {
     const { todos, Intent } = this.props
-    console.log("todos:", todos);
-    console.log("____");
-    console.log("Intent :", Intent);
+
     return (
       <div>
         <Header addTodo={Intent.add} />
@@ -22,7 +20,5 @@ TodoApp.propTypes = {
   todos: PropTypes.array.isRequired,
   Intent: PropTypes.object.isRequired
 }
-
-// Do RxJS-React bindings exist?
 
 export default TodoApp;
