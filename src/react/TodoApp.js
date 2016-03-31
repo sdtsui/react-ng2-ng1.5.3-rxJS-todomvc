@@ -1,11 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import Header from './components/Header'
 import MainSection from './components/MainSection'
-import Intent from '../intent'
+import Intent from '../rx/intent'
 
 class TodoApp extends Component {
   render() {
+    console.log("render");
     const { todos, Intent } = this.props
+    debugger;
 
     return (
       <div>

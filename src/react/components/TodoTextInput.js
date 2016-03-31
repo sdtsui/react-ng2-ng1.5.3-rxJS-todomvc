@@ -3,6 +3,7 @@ import classnames from 'classnames'
 
 class TodoTextInput extends Component {
   constructor(props, context) {
+    debugger;
     super(props, context)
     this.state = {
       text: this.props.text || ''
