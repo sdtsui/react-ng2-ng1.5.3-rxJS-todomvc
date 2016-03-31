@@ -1,13 +1,8 @@
 # udf-ee-todomvc
 
-A set of examples in React, Angular2 and Angular 1.5, using RxJS.
-
-### Notes to Self: 
-  - import CSS
+TodoMVC. UI in React, Angular2 and Angular 1.5; shared state management implemented with RxJS Observables.
 
 todo: 
-  1. Working React Implmentation
-  4. Split into Angular2, Angular 1.5 Folders
 
 # Getting started
 Run `npm install` and `npm start`. Webpack will build the assets.
