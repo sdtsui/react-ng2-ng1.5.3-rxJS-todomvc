@@ -68,7 +68,7 @@ class MainSection extends Component {
     return (
       <section className="main">
         {this.renderToggleAll(completedCount)}
-        <label for="toggle-all"> Mark all as complete </label>
+        <label for="toggle-all"> </label>
         <ul className="todo-list">
           {filteredTodos.map(
             (todo) => {

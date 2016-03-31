@@ -4,6 +4,7 @@
   "description": "Recreate TodoMVC using React, Angular 2, and Angular 1.5 using \"unidirectional data flow\" with an EventEmitter.",
   "main": "index.js",
   "scripts": {
+    "start": "http-server -a 127.0.0.1 -p 8080",
     "dev": "webpack -wdc --progress",
     "test": "echo \"Error: no test specified\" && exit 1",
     "react": "",

@@ -3,6 +3,9 @@
 TodoMVC. UI in React, Angular2 and Angular 1.5; shared state management implemented with RxJS Observables.
 
 todo: 
+  - get server-served version up
+  - clean up style/logic of state management
+  - start working on Angular 1.5 (example)
 
 # Getting started
 Run `npm install` and `npm start`. Webpack will build the assets.

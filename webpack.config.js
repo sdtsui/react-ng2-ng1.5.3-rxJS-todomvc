@@ -3,7 +3,9 @@ var path = require('path');
 module.exports = {
 
   entry: [
-    './src/index'
+    './src/react/index',
+    // './src/angular2/index',
+    // './src/angular1.5.3/index',
   ],
 
   output: {

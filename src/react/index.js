@@ -1,8 +1,8 @@
 var Rx = require('rx');
-var Model = require('./model');
+var Model = require('../rx/model');
 var React = require('react');
-var TodoApp = require('./react/TodoApp');
-import Intent from './intent';
+var TodoApp = require('./TodoApp');
+import Intent from '../rx/intent';
 
 // **since we're not filtering, we should just be able to use Model.subject, as it inherits Observable
 var Observable = Model.subject.map(function (appState) {
