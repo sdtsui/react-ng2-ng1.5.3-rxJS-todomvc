@@ -1,7 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React from 'react';
 import TodoTextInput from './TodoTextInput';
 
-class Header extends Component {
+class Header extends React.Component {
 
   constructor(props, context) {
     super(props, context)

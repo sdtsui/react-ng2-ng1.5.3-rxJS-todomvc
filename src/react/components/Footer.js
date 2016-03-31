@@ -1,4 +1,4 @@
-import React, { PropTypes, Component } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 
 const SHOW_ALL = 'show_all';
@@ -11,7 +11,7 @@ const FILTER_TITLES = {
   [SHOW_COMPLETED]: 'Completed'
 }
 
-class Footer extends Component {
+class Footer extends React.Component {
   renderTodoCount() {
     const { activeCount } = this.props
     const itemWord = activeCount === 1 ? 'item' : 'items'

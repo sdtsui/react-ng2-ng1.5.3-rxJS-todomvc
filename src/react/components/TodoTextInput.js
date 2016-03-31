@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 
-class TodoTextInput extends Component {
+class TodoTextInput extends React.Component {
   constructor(props, context) {
     debugger;
     super(props, context)

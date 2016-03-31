@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 import Header from './components/Header'
 import MainSection from './components/MainSection'
 import Intent from '../rx/intent'
 
-class TodoApp extends Component {
+class TodoApp extends React.Component {
   render() {
     console.log("render");
     const { todos, Intent } = this.props
@@ -21,6 +21,6 @@ class TodoApp extends Component {
 TodoApp.propTypes = {
   todos: PropTypes.array.isRequired,
   Intent: PropTypes.object.isRequired
-}
+};
 
-export default TodoApp;
+export default TodoApp

@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import TodoItem from './TodoItem'
 import Footer from './Footer'
 import Intent from './../../rx/intent.js'
@@ -13,7 +13,7 @@ const TODO_FILTERS = {
   [SHOW_COMPLETED]: todo => todo.completed
 }
 
-class MainSection extends Component {
+class MainSection extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = { filter: SHOW_ALL }

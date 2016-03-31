@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react'
+import React from 'react'
 import classnames from 'classnames'
 import TodoTextInput from './TodoTextInput'
 
-class TodoItem extends Component {
+class TodoItem extends React.Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
