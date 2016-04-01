@@ -200,6 +200,6 @@ Intent.subject.subscribe(function (payload) {
 
 subject.onNext(state);
 
-module.exports = {
+export default {
   subject: subject
 };

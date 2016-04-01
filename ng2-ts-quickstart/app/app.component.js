@@ -22,7 +22,10 @@ System.register(['angular2/core', './todoList'], function(exports_1, context_1) 
             }],
         execute: function() {
             AppComponent = (function () {
+                // todoStore: Array<{}>;
                 function AppComponent() {
+                    // this.todoStore = todoStore;
+                    console.log("todoStore :", []);
                 }
                 AppComponent = __decorate([
                     core_1.Component({
@@ -38,4 +41,24 @@ System.register(['angular2/core', './todoList'], function(exports_1, context_1) 
         }
     }
 });
+// export class Todo {
+//   completed: Boolean;
+//   editing: Boolean;
+//   private _title: String;
+//   get title() {
+//     return this._title;
+//   }
+//   set title(value: String) {
+//     this._title = value.trim();
+//   }
+//   constructor(title: String) {
+//     this.completed = false;
+//     this.editing = false;
+//     this.title = title.trim();
+//   }
+// }
+// var DEFAULT_TODOS = [
+//   new Todo("FRP Things"),
+//   new Todo("Sleep")
+// ] 
 //# sourceMappingURL=app.component.js.map
