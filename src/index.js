@@ -16,6 +16,8 @@ var TodoApp = require('./react/TodoApp');
 //react entrypoint
 Observable.subscribe((appState) => {
   appState.Intent = Intent;
+
+  console.log("appState:", appState);
   ReactDOM.render(
     <TodoApp {...appState}/>,
     document.getElementById('app')
