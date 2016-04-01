@@ -31,7 +31,7 @@ angular.module('todomvc')
 
     $scope.addTodo = function () {
       var newText = $scope.newTodo.trim();
-      console.log("adding :", newText);
+      console.log("___addTod Invoked :", newText);
 
       if (!newText) {
         return;
@@ -39,6 +39,7 @@ angular.module('todomvc')
 
       // $scope.saving = true;
       intent.add(newText);
+      // $scope.$apply();
     };
 
     $scope.editTodo = function (todo) {
