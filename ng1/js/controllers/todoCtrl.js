@@ -9,13 +9,18 @@ angular.module('todomvc')
     'use strict';
 
     var todos = $scope.todos = store.todos;
+    console.log("todos ", todos);
+    console.log("scope todos ", $scope.todos);
+    console.log("store todos ", store.todos);
+
     var intent = store.Intent;
     console.log("todos in controller :", todos);
 
     $scope.newTodo = '';
     $scope.editedTodo = null;
 
-    $scope.$watch('todos', function () {
+    $scope.$watchCollection('todos', function () {
+      console.log("COLLECTION CHANGED in bootstrap ");
       $scope.remainingCount = $filter('filter')(todos, { completed: false }).length;
       $scope.completedCount = todos.length - $scope.remainingCount;
       $scope.allChecked = !$scope.remainingCount;
@@ -36,10 +41,24 @@ angular.module('todomvc')
       if (!newText) {
         return;
       }
+      $scope.saving = true;
 
-      // $scope.saving = true;
+      // $scope.$digest();
       intent.add(newText);
+      // $scope.todos.push($scope.todos.pop());
       // $scope.$apply();
+      $scope.newTodo = '';
+      $scope.saving = false;
+      $scope.$watchCollection('todos', function () {
+        console.log("COLLECTION CHANGED inside add ", store);
+        todos = store.todos;
+        $scope.todos = store.todos;
+
+        $scope.remainingCount = $filter('filter')(todos, { completed: false }).length;
+        $scope.completedCount = todos.length - $scope.remainingCount;
+        $scope.allChecked = !$scope.remainingCount;
+      }, true);
+
     };
 
     $scope.editTodo = function (todo) {
