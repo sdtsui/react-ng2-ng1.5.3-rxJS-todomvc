@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "karma start test/config/karma.conf.js",
+    "dev": "webpack -wdc --progress",
     "server": "http-server -p 8080 -a 127.0.0.1"
   },
   "dependencies": {
@@ -9,7 +9,9 @@
     "angular-resource": "^1.4.3",
     "angular-route": "^ 1.4.3",
     "express": "^4.13.4",
+    "keymirror": "^0.1.1",
     "nodemon": "^1.9.1",
+    "rx": "^4.1.0",
     "todomvc-app-css": "^1.0.1",
     "todomvc-common": "^1.0.0"
   }
