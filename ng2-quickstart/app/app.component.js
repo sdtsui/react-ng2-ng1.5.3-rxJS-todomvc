@@ -28,7 +28,7 @@ System.register(['angular2/core', './todoList'], function(exports_1, context_1) 
                     core_1.Component({
                         selector: 'my-app',
                         directives: [todoList_1.TodoList],
-                        template: "\n      <h1>My Second-Last Angular 2 App</h1>\n      <todo-list></todo-list>\n     "
+                        templateUrl: 'app/app.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

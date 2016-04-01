@@ -4,9 +4,6 @@ import {TodoList} from './todoList'
 @Component({
     selector: 'my-app',
     directives: [TodoList],
-    template: `
-      <h1>My Second-Last Angular 2 App</h1>
-      <todo-list></todo-list>
-     `
+    templateUrl: 'app/app.html'
 })
 export class AppComponent { }
