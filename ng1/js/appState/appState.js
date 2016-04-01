@@ -74,8 +74,21 @@ let defaultTodo = {
   completed: false,
 };
 
+let defaultTodo1 = {
+  id: 1,
+  text: "RFP Things1",
+  completed: false,
+};
+
+let defaultTodo2 = {
+  id: 2,
+  text: "RFP Things2",
+  completed: false,
+};
+
+
 var state = {
-  todos: [defaultTodo],
+  todos: [defaultTodo, defaultTodo1, defaultTodo2],
 };
 /**
  * Helper method to create new todos. 
