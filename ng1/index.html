@@ -10,11 +10,13 @@
   <body ng-app="todomvc" ng-model="todos">
     <ng-view />
     <!-- <script src="node_modules/todomvc-common/base.js"></script> -->
+    <!-- Notes: Keymirror exports throws an error. -->
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="node_modules/angular-resource/angular-resource.js"></script>
     <script src="node_modules/keymirror/index.js"></script>
     <script src="node_modules/rx/dist/rx.all.js"></script>
+    <script src="node_modules/rx-angular/dist/rx.angular.js"></script>
     <script src="js/appState/appState.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/todoCtrl.js"></script>

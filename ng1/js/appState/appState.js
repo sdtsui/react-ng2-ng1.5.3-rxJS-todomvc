@@ -1,6 +1,3 @@
-console.log("Rx: ", Rx);
-console.log("keyMirror :", keyMirror);
-
 /**
  * Define Keys
  */
@@ -124,7 +121,6 @@ function add(text) {
 }
 
 function del(id) {
-  console.log("del called with id: ", id);
   let todos = state.todos.slice();
   todos = todos.filter(todo => todo.id !== id);
 
@@ -174,9 +170,7 @@ function complete(id) {
     }
   };
   let todos = state.todos.slice();
-  console.log('todos :', todos);
   todos = todos.map(completeOneTodo);
-  console.log('todos after Map:', todos);
 
   state = Object.assign(
     {},
@@ -248,8 +242,6 @@ function clearCompleted() {
  */
 
 Intent.subject.subscribe(function (payload) {
-  console.log("EVENT:", payload);
-  console.log("EVENT:", payload.key);
   switch(payload.key) {
     case Keys.TODO_ADD:
       add(payload.text);
@@ -296,10 +288,6 @@ var Observable = Model.subject.map(function (appState) {
 var __appState = {};
 
 Observable.subscribe((appState) => {
-  console.log("old AppState:", __appState);
   appState.Intent = Intent;
   __appState = appState;
-  console.log("old AppState:", __appState);
 });
-
-console.log("DONE");

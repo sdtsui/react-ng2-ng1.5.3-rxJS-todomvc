@@ -5,22 +5,23 @@
  * - exposes the model to the template and provides event handlers
  */
 angular.module('todomvc')
-  .controller('TodoCtrl', function TodoCtrl($scope, $routeParams, $filter, store) {
+  .controller('TodoCtrl', function TodoCtrl($scope, observeOnScope, $routeParams, $filter, store) {
     'use strict';
-
-    var todos = $scope.todos = store.todos;
-    console.log("todos ", todos);
-    console.log("scope todos ", $scope.todos);
-    console.log("store todos ", store.todos);
-
+    var todos = $scope.todos = __appState.todos;
+    $scope.todos = __appState.todos;
     var intent = store.Intent;
-    console.log("todos in controller :", todos);
 
     $scope.newTodo = '';
     $scope.editedTodo = null;
 
+    Observable.subscribe((appState) => {
+      appState.Intent = Intent;
+      $scope.todos = appState.todos;
+      __appState = appState;
+      console.log("___in Controller :  new todos: ", $scope.todos);
+    });
+
     $scope.$watchCollection('todos', function () {
-      console.log("COLLECTION CHANGED in bootstrap ");
       $scope.remainingCount = $filter('filter')(todos, { completed: false }).length;
       $scope.completedCount = todos.length - $scope.remainingCount;
       $scope.allChecked = !$scope.remainingCount;
@@ -49,15 +50,16 @@ angular.module('todomvc')
       // $scope.$apply();
       $scope.newTodo = '';
       $scope.saving = false;
-      $scope.$watchCollection('todos', function () {
-        console.log("COLLECTION CHANGED inside add ", store);
-        todos = store.todos;
-        $scope.todos = store.todos;
+      // $scope.$watchCollection('todos', function () {
+      //   console.log("COLLECTION CHANGED inside add ", store);
+      //   console.log("Inside watchCollection : ", $scope.todos);
+      //   todos = $scope.todos;
+      //   $scope.todos = $scope.todos;
 
-        $scope.remainingCount = $filter('filter')(todos, { completed: false }).length;
-        $scope.completedCount = todos.length - $scope.remainingCount;
-        $scope.allChecked = !$scope.remainingCount;
-      }, true);
+      //   $scope.remainingCount = $filter('filter')(todos, { completed: false }).length;
+      //   $scope.completedCount = todos.length - $scope.remainingCount;
+      //   $scope.allChecked = !$scope.remainingCount;
+      // }, true);
 
     };
 
@@ -71,79 +73,30 @@ angular.module('todomvc')
     $scope.saveEdits = function (todo, event) {
       console.log("saveEdits : ", todo, event);
       intent.edit(todo.id, todo.text);
-      // Blur events are automatically triggered after the form submit event.
-      // This does some unfortunate logic handling to prevent saving twice.
-      // if (event === 'blur' && $scope.saveEvent === 'submit') {
-      //   $scope.saveEvent = null;
-      //   return;
-      // }
-
-      // $scope.saveEvent = event;
-
-      // if ($scope.reverted) {
-      //   // Todo edits were reverted-- don't save.
-      //   $scope.reverted = null;
-      //   return;
-      // }
-
-      // todo.title = todo.title.trim();
-
-      // if (todo.title === $scope.originalTodo.title) {
-      //   $scope.editedTodo = null;
-      //   return;
-      // }
-
-      // store[todo.title ? 'put' : 'delete'](todo)
-      //   .then(function success() {}, function error() {
-      //     todo.title = $scope.originalTodo.title;
-      //   })
-      //   .finally(function () {
-      //     $scope.editedTodo = null;
-      //   });
     };
 
     $scope.revertEdits = function (todo) {
-      console.log("revertEdits :", todo);
-      // todos[todos.indexOf(todo)] = $scope.originalTodo;
-      // $scope.editedTodo = null;
-      // $scope.originalTodo = null;
-      // $scope.reverted = true;
+      console.log("THIS SHOULD NEVER GET CALLED :", todo);
     };
 
     $scope.removeTodo = function (todo) {
       console.log("removeTodo :", todo);
       intent.del(todo.id);
-      // store.delete(todo);
     };
 
     $scope.saveTodo = function (todo) {
-      console.log("saveTodo :", todo);
-      // store.put(todo);
+      console.log("THIS SHOULD NEVER GET CALLED : saveTodo", todo);
     };
 
     $scope.toggleCompleted = function (todo, completed) {
-      console.log("toggleCompleted :", todo, completed);
-      // if (angular.isDefined(completed)) {
-      //   todo.completed = completed;
-      // }
-      // store.put(todo, todos.indexOf(todo))
-      //   .then(function success() {}, function error() {
-      //     todo.completed = !todo.completed;
-      //   });
+      console.log("THIS SHOULD NEVER GET CALLED : toggleCompleted :", todo, completed);
     };
 
     $scope.clearCompletedTodos = function () {
-      console.log("clearCompleted!!");
-
-      // store.clearCompleted();
+      intent.clearCompleted();
     };
 
     $scope.markAll = function (completed) {
-      console.log("markAll : ", completed);
-      // todos.forEach(function (todo) {
-      //   if (todo.completed !== completed) {
-      //     $scope.toggleCompleted(todo, completed);
-      //   }
-      // });
+      intent.completeAll();
     };
   });
