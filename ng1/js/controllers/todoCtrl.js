@@ -22,8 +22,13 @@ angular.module('todomvc')
     });
 
     $scope.$watchCollection('todos', function () {
-      $scope.remainingCount = $filter('filter')(todos, { completed: false }).length;
-      $scope.completedCount = todos.length - $scope.remainingCount;
+      console.log("dirty assign :::");
+      $scope.todos = __appState.todos;
+
+      $scope.remainingCount = $filter('filter')($scope.todos, { completed: false }).length;
+      console.log('length :', $scope.todos.length);
+      console.log('scope remaining :', $scope.remainingCount);
+      $scope.completedCount = $scope.todos.length - $scope.remainingCount;
       $scope.allChecked = !$scope.remainingCount;
     }, true);
 
@@ -89,7 +94,8 @@ angular.module('todomvc')
     };
 
     $scope.toggleCompleted = function (todo, completed) {
-      console.log("THIS SHOULD NEVER GET CALLED : toggleCompleted :", todo, completed);
+      console.log("calling Complete Once", todo, completed);
+      intent.complete(todo.id);
     };
 
     $scope.clearCompletedTodos = function () {
