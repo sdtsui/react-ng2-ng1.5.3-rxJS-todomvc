@@ -76,7 +76,7 @@ angular.module('todomvc')
     };
 
     $scope.revertEdits = function (todo) {
-      console.log("THIS SHOULD NEVER GET CALLED :", todo);
+      console.log("*_RevertEdits :", todo);
     };
 
     $scope.removeTodo = function (todo) {
@@ -85,11 +85,11 @@ angular.module('todomvc')
     };
 
     $scope.saveTodo = function (todo) {
-      console.log("THIS SHOULD NEVER GET CALLED : saveTodo", todo);
+      console.log("*_saveTodo", todo);
     };
 
     $scope.toggleCompleted = function (todo, completed) {
-      console.log("THIS SHOULD NEVER GET CALLED : toggleCompleted :", todo, completed);
+      console.log("*_toggleCompleted :", todo, completed);
     };
 
     $scope.clearCompletedTodos = function () {
