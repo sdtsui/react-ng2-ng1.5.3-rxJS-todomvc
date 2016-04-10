@@ -1,16 +1,23 @@
 # udf-ee-todomvc
 
-TodoMVC. UI in React, Angular2 and Angular 1.5; shared state management implemented with RxJS Observables.
+TodoMVC examples in React, Angular2 and Angular 1.5.
+[TODO: Image, with Titles]()
 
-todo: 
+### Notes: 
 
-# Getting started
-Run `npm install` and `npm start`. Webpack will build the assets.
-In a new pane, `open index.html`.
+##### React: 
 
-TODO: serve from a server, image of TodoMVC, start instructions from a server
-Package.json Todos:
-// TODO: website, details, clean up package.JSON
-// Credit: 
-    - react-rxjs-flow for RxJS examples :  Justin Woo
-    - inspiration : Patrick Stapleton
+Data flow is unidirectional; uses an RxJS observable to handle events and state changes.  Model and Intent code could be cleaned up. Meets all requirements except for saving in localStorage. 
+
+##### Angular1.5: 
+
+Demo, for how RxJs can be used inside an Angular Controller. Uses the same data layer as React example above. 
+
+##### Angular 2:
+
+The [EventEmitter](https://angular.io/docs/js/latest/api/core/EventEmitter-class.html) API didn't seem ready.  I went for a fully functional TypeScript implementation with a deeper directive heirarchy structure than other examples.
+
+### Inspiration:  
+  - react-rxjs-flow by Justin Woo
+  - Patrick Stapleton's work on Angular2
+  - todoMVC angular2 example
