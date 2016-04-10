@@ -11,6 +11,13 @@ System.register(['angular2/platform/browser', './app.component'], function(expor
                 app_component_1 = app_component_1_1;
             }],
         execute: function() {
+            // import { createStore } from 'redux'
+            // import todoApp from '../src/reducers/index'
+            // console.log('todoApp ::',todoApp);
+            // console.log("todo");
+            // import App from './components/App'
+            // let store = createStore(todoApp)
+            // console.log('new store :', store);
             browser_1.bootstrap(app_component_1.AppComponent);
         }
     }

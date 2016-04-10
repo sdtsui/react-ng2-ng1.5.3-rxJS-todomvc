@@ -19,13 +19,13 @@
     <script>
       System.config({
         packages: {        
-          app: {
+          app: { //must match your folder name
             format: 'register',
             defaultExtension: 'js'
           }
         }
       });
-      System.import('src')
+      System.import('app/main')
             .then(null, console.error.bind(console));
     </script>
   </head>
