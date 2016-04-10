@@ -11,7 +11,7 @@ Data flow is unidirectional; uses an RxJS observable to handle events and state 
 
 ##### Angular1.5: 
 
-Demo, for how RxJs can be used inside an Angular Controller. Uses the same data layer as React example above. 
+Demo, for how RxJs can be used inside an Angular Controller. Uses the same data layer as React example above. Would have been better to use [ng-redux bindings](https://github.com/wbuchwalter/ng-redux).
 
 ##### Angular 2:
 
