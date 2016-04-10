@@ -28,7 +28,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     core_1.Component({
                         selector: 'my-app',
                         // directives: [TodoList],
-                        templateUrl: 'app/app.html'
+                        // templateUrl: 'app/app.html'
+                        template: '<div>Hello World</div>'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

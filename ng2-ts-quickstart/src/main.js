@@ -11,16 +11,14 @@ System.register(['angular2/platform/browser', './components/App.component'], fun
                 App_component_1 = App_component_1_1;
             }],
         execute: function() {
+            // import {createStore, applyMiddleware, compose} from './node_modules/redux/index.d.ts';
+            // console.log('compose :', compose);
+            // import store from './store/index';
+            // console.log('store :', store);
             browser_1.bootstrap(App_component_1.AppComponent);
         }
     }
 });
-/**
- *
- */
-/**
- *
- */
 // console.log('createStore', createStore);
 // import todoApp from '../reducers/index'
 // let store = createStore(todoApp)

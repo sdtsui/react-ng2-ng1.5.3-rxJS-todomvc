@@ -1,14 +1,11 @@
 import {bootstrap}    from 'angular2/platform/browser';
 import {AppComponent} from './components/App.component';
+// import {createStore, applyMiddleware, compose} from './node_modules/redux/index.d.ts';
+// console.log('compose :', compose);
+// import store from './store/index';
+// console.log('store :', store);
 bootstrap(AppComponent);
 
-/**
- * 
- */
-
-/**
- * 
- */
 
 // console.log('createStore', createStore);
 // import todoApp from '../reducers/index'
