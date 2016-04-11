@@ -7,3 +7,4 @@ console.log('createStore:', createStore);
 })
 
 export class AppComponent { }
+//reducers go into this folder.
