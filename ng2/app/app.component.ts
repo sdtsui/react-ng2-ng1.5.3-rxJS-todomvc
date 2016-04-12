@@ -1,7 +1,11 @@
-declare var require: any
+declare var require: {
+    <T>(path: string): T;
+    (paths: string[], callback: (...modules: any[]) => void): void;
+    ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
+};
 console.log("require", require);
 import provider = require('ng2-redux').provider;
-
+console.log("provider :", provider);
 import {Component} from 'angular2/core';
 // import {createStore, applyMiddleware, compose} from 'redux';
 // console.log('createStore:', createStore);
