@@ -8,6 +8,7 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "ng2-redux": "^2.0.2",
     "redux": "^3.4.0",
     "ts-loader": "^0.8.1",
     "typescript": "^1.8.9",

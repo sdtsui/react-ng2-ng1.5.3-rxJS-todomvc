@@ -1,17 +1,17 @@
 {
+  "compileOnSave": false,
+  "buildOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "module": "amd",
     "moduleResolution": "node",
-    "sourceMap": true,
+    "target": "es5",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noImplicitAny": false,
     "removeComments": false,
-    "noImplicitAny": false
+    "sourceMap": true
   },
   "files": [
     "node_modules/angular2/typings/browser.d.ts"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false
+  ]
 }
