@@ -3,6 +3,7 @@ declare var require: {
   (paths: string[], callback: (...modules: any[]) => void): void;
   ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
 };
+
 import { todoApp } from './reducers';
 
 console.log("todoApp in boot : ", todoApp);
@@ -14,7 +15,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 
 const store = createStore(
   todoApp, //reducer
-  {}
+  {} //initialState
  );
 
 // Original Bootstrap Imports: 
