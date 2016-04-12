@@ -99,31 +99,14 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(251), __webpack_require__(252), __webpack_require__(255), __webpack_require__(256), __webpack_require__(234)], __WEBPACK_AMD_DEFINE_RESULT__ = function (require, exports) {
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(251), __webpack_require__(252), __webpack_require__(255), __webpack_require__(256), __webpack_require__(2)], __WEBPACK_AMD_DEFINE_RESULT__ = function (require, exports) {
 	    "use strict";
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 
 /***/ },
 
-/***/ 55:
-/***/ function(module, exports) {
-
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
-
-/***/ },
-
-/***/ 234:
+/***/ 2:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -131,27 +114,27 @@
 	exports.__esModule = true;
 	exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
 	
-	var _createStore = __webpack_require__(236);
+	var _createStore = __webpack_require__(4);
 	
 	var _createStore2 = _interopRequireDefault(_createStore);
 	
-	var _combineReducers = __webpack_require__(241);
+	var _combineReducers = __webpack_require__(9);
 	
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 	
-	var _bindActionCreators = __webpack_require__(243);
+	var _bindActionCreators = __webpack_require__(11);
 	
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 	
-	var _applyMiddleware = __webpack_require__(244);
+	var _applyMiddleware = __webpack_require__(12);
 	
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 	
-	var _compose = __webpack_require__(245);
+	var _compose = __webpack_require__(13);
 	
 	var _compose2 = _interopRequireDefault(_compose);
 	
-	var _warning = __webpack_require__(242);
+	var _warning = __webpack_require__(10);
 	
 	var _warning2 = _interopRequireDefault(_warning);
 	
@@ -172,11 +155,11 @@
 	exports.bindActionCreators = _bindActionCreators2["default"];
 	exports.applyMiddleware = _applyMiddleware2["default"];
 	exports.compose = _compose2["default"];
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(235)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 
-/***/ 235:
+/***/ 3:
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -274,7 +257,7 @@
 
 /***/ },
 
-/***/ 236:
+/***/ 4:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -283,7 +266,7 @@
 	exports.ActionTypes = undefined;
 	exports["default"] = createStore;
 	
-	var _isPlainObject = __webpack_require__(237);
+	var _isPlainObject = __webpack_require__(5);
 	
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 	
@@ -496,12 +479,12 @@
 
 /***/ },
 
-/***/ 237:
+/***/ 5:
 /***/ function(module, exports, __webpack_require__) {
 
-	var getPrototype = __webpack_require__(238),
-	    isHostObject = __webpack_require__(239),
-	    isObjectLike = __webpack_require__(240);
+	var getPrototype = __webpack_require__(6),
+	    isHostObject = __webpack_require__(7),
+	    isObjectLike = __webpack_require__(8);
 	
 	/** `Object#toString` result references. */
 	var objectTag = '[object Object]';
@@ -573,7 +556,7 @@
 
 /***/ },
 
-/***/ 238:
+/***/ 6:
 /***/ function(module, exports) {
 
 	/* Built-in method references for those with the same name as other `lodash` methods. */
@@ -595,7 +578,7 @@
 
 /***/ },
 
-/***/ 239:
+/***/ 7:
 /***/ function(module, exports) {
 
 	/**
@@ -622,7 +605,7 @@
 
 /***/ },
 
-/***/ 240:
+/***/ 8:
 /***/ function(module, exports) {
 
 	/**
@@ -658,7 +641,7 @@
 
 /***/ },
 
-/***/ 241:
+/***/ 9:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -666,13 +649,13 @@
 	exports.__esModule = true;
 	exports["default"] = combineReducers;
 	
-	var _createStore = __webpack_require__(236);
+	var _createStore = __webpack_require__(4);
 	
-	var _isPlainObject = __webpack_require__(237);
+	var _isPlainObject = __webpack_require__(5);
 	
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 	
-	var _warning = __webpack_require__(242);
+	var _warning = __webpack_require__(10);
 	
 	var _warning2 = _interopRequireDefault(_warning);
 	
@@ -788,11 +771,11 @@
 	    return hasChanged ? nextState : state;
 	  };
 	}
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(235)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 
-/***/ 242:
+/***/ 10:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -822,7 +805,7 @@
 
 /***/ },
 
-/***/ 243:
+/***/ 11:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -879,7 +862,7 @@
 
 /***/ },
 
-/***/ 244:
+/***/ 12:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -890,7 +873,7 @@
 	
 	exports["default"] = applyMiddleware;
 	
-	var _compose = __webpack_require__(245);
+	var _compose = __webpack_require__(13);
 	
 	var _compose2 = _interopRequireDefault(_compose);
 	
@@ -943,7 +926,7 @@
 
 /***/ },
 
-/***/ 245:
+/***/ 13:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -979,6 +962,23 @@
 	    }, last.apply(undefined, arguments));
 	  };
 	}
+
+/***/ },
+
+/***/ 23:
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
 
 /***/ },
 
@@ -4724,7 +4724,7 @@
 	  return globals;
 	}));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(235)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(3)))
 
 /***/ },
 
@@ -5686,7 +5686,7 @@
 	}).call(this);
 	
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(235), (function() { return this; }()), __webpack_require__(55)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), (function() { return this; }()), __webpack_require__(23)(module)))
 
 /***/ },
 
@@ -6983,7 +6983,7 @@
 	
 	/***/ }
 	/******/ ]);
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(235)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 
@@ -10724,7 +10724,7 @@
 	  return Object.prototype.hasOwnProperty.call(obj, prop);
 	}
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(235)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(3)))
 
 /***/ },
 

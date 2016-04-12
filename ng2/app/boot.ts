@@ -1,19 +1,24 @@
+declare var require: {
+  <T>(path: string): T;
+  (paths: string[], callback: (...modules: any[]) => void): void;
+  ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
+};
+import todoApp from './reducers';
+import provider = require('ng2-redux').provider;
+import {createStore, applyMiddleware, compose} from 'redux';
+
+const store = createStore(
+  todoApp, //reducer
+  {}
+ );
+
+// Original Bootstrap Imports: 
+
 import {bootstrap}    from 'angular2/platform/browser'
 import {AppComponent} from './app.component'
 
-bootstrap(AppComponent);
+bootstrap(
+  AppComponent,
+  [provider(store)]
+);
 
-// import {bootstrap} from 'angular2/platform/browser';
-// import {createStore, applyMiddleware} from 'redux';
-// import thunk from 'redux-thunk';
-// import {App} from './containers/App';
-// import {provider} from  'ng2-redux';
-// import {rootReducer} from './reducers';
-
-// const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
-// const store = createStoreWithMiddleware(rootReducer);
-
-// bootstrap(
-//   App,
-//   [provider(store)]
-// );
