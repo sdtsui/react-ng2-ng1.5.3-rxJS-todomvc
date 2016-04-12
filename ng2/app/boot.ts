@@ -3,8 +3,13 @@ declare var require: {
   (paths: string[], callback: (...modules: any[]) => void): void;
   ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
 };
-import todoApp from './reducers';
-import provider = require('ng2-redux').provider;
+import { todoApp } from './reducers';
+
+console.log("todoApp in boot : ", todoApp);
+
+import ng2_redux = require('ng2-redux');
+const provider = ng2_redux.provider;
+console.log("provider in boot:", provider);
 import {createStore, applyMiddleware, compose} from 'redux';
 
 const store = createStore(
@@ -17,6 +22,7 @@ const store = createStore(
 import {bootstrap}    from 'angular2/platform/browser'
 import {AppComponent} from './app.component'
 
+console.log("store, before bootstrap : ", store);
 bootstrap(
   AppComponent,
   [provider(store)]

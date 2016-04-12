@@ -35,4 +35,9 @@ const todos = (state = [], action) => {
   }
 }
 
-export default todos
+console.log("todos: ", todos);
+console.log("typeof ", typeof todos);
+
+
+// export default todos
+exports.todos = todos;
