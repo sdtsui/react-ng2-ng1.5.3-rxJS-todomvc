@@ -5,7 +5,13 @@ declare var require: {
 };
 console.log("require", require);
 import provider = require('ng2-redux').provider;
-console.log("provider :", provider);
+console.log("provider :", provider);;
+import _ = require('lodash');
+
+
+
+
+
 import {Component} from 'angular2/core';
 // import {createStore, applyMiddleware, compose} from 'redux';
 // console.log('createStore:', createStore);
